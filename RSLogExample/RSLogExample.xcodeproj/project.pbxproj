@@ -7,21 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B036E9420BA057500985462 /* RSLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B036E9220BA057500985462 /* RSLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B036E9B20BA05BA00985462 /* RSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B036E9A20BA05BA00985462 /* RSLog.swift */; };
-		8B036E9D20BA05D100985462 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B036E9C20BA05D100985462 /* Logger.swift */; };
+		8BF8EFB120E41AAA0051815E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB020E41AAA0051815E /* AppDelegate.swift */; };
+		8BF8EFB320E41AAA0051815E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB220E41AAA0051815E /* ViewController.swift */; };
+		8BF8EFB620E41AAA0051815E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB420E41AAA0051815E /* Main.storyboard */; };
+		8BF8EFB820E41AAD0051815E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB720E41AAD0051815E /* Assets.xcassets */; };
+		8BF8EFBB20E41AAD0051815E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8BA4B73B20E5637A00D56D7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		8B036E8F20BA057500985462 /* RSLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B036E9220BA057500985462 /* RSLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSLog.h; sourceTree = "<group>"; };
-		8B036E9320BA057500985462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B036E9A20BA05BA00985462 /* RSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSLog.swift; sourceTree = "<group>"; };
-		8B036E9C20BA05D100985462 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		8BF8EFAD20E41AAA0051815E /* RSLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF8EFB020E41AAA0051815E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BF8EFB220E41AAA0051815E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BF8EFB520E41AAA0051815E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BF8EFB720E41AAD0051815E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BF8EFBA20E41AAD0051815E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BF8EFBC20E41AAD0051815E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8B036E8B20BA057500985462 /* Frameworks */ = {
+		8BF8EFAA20E41AAA0051815E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,121 +48,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B036E8520BA057500985462 = {
+		8BF8EFA420E41AA90051815E = {
 			isa = PBXGroup;
 			children = (
-				8B036E9120BA057500985462 /* RSLog */,
-				8B036E9020BA057500985462 /* Products */,
+				8BF8EFAF20E41AAA0051815E /* RSLogExample */,
+				8BF8EFAE20E41AAA0051815E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8B036E9020BA057500985462 /* Products */ = {
+		8BF8EFAE20E41AAA0051815E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B036E8F20BA057500985462 /* RSLog.framework */,
+				8BF8EFAD20E41AAA0051815E /* RSLogExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8B036E9120BA057500985462 /* RSLog */ = {
+		8BF8EFAF20E41AAA0051815E /* RSLogExample */ = {
 			isa = PBXGroup;
 			children = (
-				8B036E9220BA057500985462 /* RSLog.h */,
-				8B036E9320BA057500985462 /* Info.plist */,
-				8B036E9A20BA05BA00985462 /* RSLog.swift */,
-				8B036E9C20BA05D100985462 /* Logger.swift */,
+				8BF8EFB020E41AAA0051815E /* AppDelegate.swift */,
+				8BF8EFB220E41AAA0051815E /* ViewController.swift */,
+				8BF8EFB420E41AAA0051815E /* Main.storyboard */,
+				8BF8EFB720E41AAD0051815E /* Assets.xcassets */,
+				8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */,
+				8BF8EFBC20E41AAD0051815E /* Info.plist */,
 			);
-			path = RSLog;
+			path = RSLogExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		8B036E8C20BA057500985462 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B036E9420BA057500985462 /* RSLog.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		8B036E8E20BA057500985462 /* RSLog */ = {
+		8BF8EFAC20E41AAA0051815E /* RSLogExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B036E9720BA057500985462 /* Build configuration list for PBXNativeTarget "RSLog" */;
+			buildConfigurationList = 8BF8EFBF20E41AAD0051815E /* Build configuration list for PBXNativeTarget "RSLogExample" */;
 			buildPhases = (
-				8B036E8A20BA057500985462 /* Sources */,
-				8B036E8B20BA057500985462 /* Frameworks */,
-				8B036E8C20BA057500985462 /* Headers */,
-				8B036E8D20BA057500985462 /* Resources */,
+				8BF8EFA920E41AAA0051815E /* Sources */,
+				8BF8EFAA20E41AAA0051815E /* Frameworks */,
+				8BF8EFAB20E41AAA0051815E /* Resources */,
+				8BA4B73B20E5637A00D56D7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RSLog;
-			productName = RSLog;
-			productReference = 8B036E8F20BA057500985462 /* RSLog.framework */;
-			productType = "com.apple.product-type.framework";
+			name = RSLogExample;
+			productName = RSLogExample;
+			productReference = 8BF8EFAD20E41AAA0051815E /* RSLogExample.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8B036E8620BA057500985462 /* Project object */ = {
+		8BF8EFA520E41AA90051815E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "m3rk edge";
 				TargetAttributes = {
-					8B036E8E20BA057500985462 = {
-						CreatedOnToolsVersion = 9.3.1;
-						LastSwiftMigration = 0930;
+					8BF8EFAC20E41AAA0051815E = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 8B036E8920BA057500985462 /* Build configuration list for PBXProject "RSLog" */;
+			buildConfigurationList = 8BF8EFA820E41AA90051815E /* Build configuration list for PBXProject "RSLogExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 8B036E8520BA057500985462;
-			productRefGroup = 8B036E9020BA057500985462 /* Products */;
+			mainGroup = 8BF8EFA420E41AA90051815E;
+			productRefGroup = 8BF8EFAE20E41AAA0051815E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B036E8E20BA057500985462 /* RSLog */,
+				8BF8EFAC20E41AAA0051815E /* RSLogExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8B036E8D20BA057500985462 /* Resources */ = {
+		8BF8EFAB20E41AAA0051815E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF8EFBB20E41AAD0051815E /* LaunchScreen.storyboard in Resources */,
+				8BF8EFB820E41AAD0051815E /* Assets.xcassets in Resources */,
+				8BF8EFB620E41AAA0051815E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8B036E8A20BA057500985462 /* Sources */ = {
+		8BF8EFA920E41AAA0051815E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B036E9B20BA05BA00985462 /* RSLog.swift in Sources */,
-				8B036E9D20BA05D100985462 /* Logger.swift in Sources */,
+				8BF8EFB320E41AAA0051815E /* ViewController.swift in Sources */,
+				8BF8EFB120E41AAA0051815E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		8BF8EFB420E41AAA0051815E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BF8EFB520E41AAA0051815E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BF8EFBA20E41AAD0051815E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		8B036E9520BA057500985462 /* Debug */ = {
+		8BF8EFBD20E41AAD0051815E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -179,7 +210,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -197,18 +227,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		8B036E9620BA057500985462 /* Release */ = {
+		8BF8EFBE20E41AAD0051815E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +270,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -254,67 +281,46 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8B036E9820BA057500985462 /* Debug */ = {
+		8BF8EFC020E41AAD0051815E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AW8VXETGH8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RSLog/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = RSLogExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = m3rk.edge.corp.RSLog;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_BUNDLE_IDENTIFIER = m3rk.edge.RSLogExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8B036E9920BA057500985462 /* Release */ = {
+		8BF8EFC120E41AAD0051815E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AW8VXETGH8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RSLog/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = RSLogExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = m3rk.edge.corp.RSLog;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = m3rk.edge.RSLogExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B036E8920BA057500985462 /* Build configuration list for PBXProject "RSLog" */ = {
+		8BF8EFA820E41AA90051815E /* Build configuration list for PBXProject "RSLogExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B036E9520BA057500985462 /* Debug */,
-				8B036E9620BA057500985462 /* Release */,
+				8BF8EFBD20E41AAD0051815E /* Debug */,
+				8BF8EFBE20E41AAD0051815E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B036E9720BA057500985462 /* Build configuration list for PBXNativeTarget "RSLog" */ = {
+		8BF8EFBF20E41AAD0051815E /* Build configuration list for PBXNativeTarget "RSLogExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B036E9820BA057500985462 /* Debug */,
-				8B036E9920BA057500985462 /* Release */,
+				8BF8EFC020E41AAD0051815E /* Debug */,
+				8BF8EFC120E41AAD0051815E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8B036E8620BA057500985462 /* Project object */;
+	rootObject = 8BF8EFA520E41AA90051815E /* Project object */;
 }

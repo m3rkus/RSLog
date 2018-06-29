@@ -12,8 +12,8 @@ import Foundation
 // MARK: - Properties
 final public class RSLog {
     
-    public init() {
-    }
+    // MARK: Public var
+    public static let shared = RSLog()
     
     // MARK: Private var
     private let logQueue = DispatchQueue(label: "com.m3rk.log")
