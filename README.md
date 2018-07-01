@@ -6,6 +6,7 @@ Lightweight thread-safe logging framework implemented in Swift.
 - Filename and line number logging
 - Function name logging
 - Three log levels: Info, Warning, Error
+- Works only for debug builds
 
 ### Example output
 ![](Screenshots/logExample.png)
