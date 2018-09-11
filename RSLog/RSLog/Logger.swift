@@ -26,4 +26,9 @@ internal protocol Logger {
                function: String,
                line: UInt)
     
+    func fatalError(_ message: String,
+                    filename: String,
+                    function: String,
+                    line: UInt)
+    
 }

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         log.info("This is an info message")
         log.warning("This is a warning message")
         log.error("This is an error message")
+//        log.fatalError("This is a fatal error message")
     }
 
 }

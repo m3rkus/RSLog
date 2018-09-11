@@ -16,12 +16,14 @@ final public class RSLog {
     public static let shared = RSLog()
     
     // MARK: Private var
+    private init() {}
     private let logQueue = DispatchQueue(label: "com.m3rk.log")
     
     private enum LogLevel {
         case info
         case warning
         case error
+        case fatalError
         
         var title: String {
             switch self {
@@ -31,6 +33,8 @@ final public class RSLog {
                 return "WARNING"
             case .error:
                 return "ERROR"
+            case .fatalError:
+                return "FATAL ERROR"
             }
         }
         
@@ -42,6 +46,8 @@ final public class RSLog {
                 return "⚠️"
             case .error:
                 return "⛔️"
+            case .fatalError:
+                return "💥"
             }
         }
     }
@@ -84,6 +90,17 @@ extension RSLog: Logger {
             line: line)
     }
     
+    public func fatalError(_ message: String,
+                           filename: String = #file,
+                           function: String = #function,
+                           line: UInt = #line) {
+        log(level: .fatalError,
+            message: message,
+            filename: filename,
+            function: function,
+            line: line)
+    }
+    
 }
 
 // MARK: - Private func
@@ -97,14 +114,19 @@ extension RSLog {
         #if DEBUG
         logQueue.async { [weak self] in
             guard let `self` = self else { return }
+            
             print("[\(level.symbol) \(level.title)] [\(self.format(filename)):\(line)] \(function) - \(message)")
+            
+            if level == .fatalError {
+                Swift.fatalError()
+            }
         }
         #endif
     }
     
     private func format(_ filename: String) -> String {
         return filename.components(separatedBy: "/").last?
-            .components(separatedBy: ".").first ?? "???"
+                       .components(separatedBy: ".").first ?? "???"
     }
     
 }
