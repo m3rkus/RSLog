@@ -15,6 +15,10 @@ final public class RSLog {
     // MARK: Public var
     public static let shared = RSLog()
     
+    public var verboseMode = false
+    
+    public var showLogLevelTitle = false
+    
     // MARK: Private var
     private init() {}
     private let logQueue = DispatchQueue(label: "com.m3rk.log")
@@ -115,7 +119,21 @@ extension RSLog {
         logQueue.async { [weak self] in
             guard let `self` = self else { return }
             
-            print("[\(level.symbol) \(level.title)] [\(self.format(filename)):\(line)] \(function) - \(message)")
+            var metaInfoString: String
+            if self.showLogLevelTitle {
+                metaInfoString = "[\(level.symbol) \(level.title)] [\(self.format(filename)):\(line)] \(function)"
+            } else {
+                metaInfoString = "\(level.symbol) [\(self.format(filename)):\(line)] \(function)"
+            }
+            
+            var logString: String
+            if self.verboseMode {
+                logString = "\(metaInfoString)\n    ⮑ \(message)"
+            } else {
+                logString = "\(metaInfoString) - \(message)"
+            }
+            
+            print(logString)
             
             if level == .fatalError {
                 Swift.fatalError()
