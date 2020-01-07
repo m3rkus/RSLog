@@ -7,104 +7,251 @@
 //
 
 import Foundation
+import os
 
-
-// MARK: - Properties
-final public class RSLog {
+// MARK: - RSLogProtocol
+public protocol RSLogProtocol {
     
-    // MARK: Public var
+    static var shared: Self { get }
+    
+    var isLogLevelTitleDisplayed: Bool { get set }
+    var isLogLevelSymbolDisplayed: Bool { get set }
+    var isFilenameDisplayed: Bool { get set }
+    var isFunctionNameDisplayed: Bool { get set }
+    @available(iOS 10.0, *)
+    var isOSLogEnabled: Bool { get set }
+    var logLevelTitleProvider: (_ level: LogLevel) -> String { get set }
+    var logLevelSymbolProvider: (_ level: LogLevel) -> String { get set }
+    
+    func info(
+        _ message: String,
+        _ type: OSLog?,
+        filename: String,
+        function: String,
+        line: UInt)
+    
+    func debug(
+        _ message: String,
+        _ type: OSLog?,
+        filename: String,
+        function: String,
+        line: UInt)
+    
+    func error(
+        _ message: String,
+        _ type: OSLog?,
+        filename: String,
+        function: String,
+        line: UInt)
+}
+
+// MARK: - LogLevel
+public enum LogLevel {
+    
+    case info
+    case debug
+    case error
+}
+
+// MARK: - RSLog
+final public class RSLog: RSLogProtocol {
+    
+    // MARK: - Public Properties
     public static let shared = RSLog()
+    private init() {}
+    public var isOSLogEnabled = true
+    public var isLogLevelTitleDisplayed = true
+    public var isLogLevelSymbolDisplayed = true
+    public var isFilenameDisplayed = true
+    public var isFunctionNameDisplayed = true
     
-    // MARK: Private var
+    // MARK: - Private Properties
     private let logQueue = DispatchQueue(label: "com.m3rk.log")
     
-    private enum LogLevel {
-        case info
-        case warning
-        case error
+    // MARK: - Config
+    public var logLevelTitleProvider: (_ level: LogLevel) -> String = { level in
         
-        var title: String {
-            switch self {
-            case .info:
-                return "INFO"
-            case .warning:
-                return "WARNING"
-            case .error:
-                return "ERROR"
-            }
-        }
-        
-        var symbol: String {
-            switch self {
-            case .info:
-                return "✅"
-            case .warning:
-                return "⚠️"
-            case .error:
-                return "⛔️"
-            }
+        switch level {
+        case .info:
+            return "INFO"
+        case .debug:
+            return "WARNING"
+        case .error:
+            return "ERROR"
         }
     }
     
-}
+    public var logLevelSymbolProvider: (LogLevel) -> String = { level in
+        
+        switch level {
+        case .info:
+            return "💾"
+        case .debug:
+            return "📟"
+        case .error:
+            return "🚨"
+        }
+    }
 
-// MARK: - Public func
-extension RSLog: Logger {
-    
-    public func info(_ message: String,
-                     filename: String = #file,
-                     function: String = #function,
-                     line: UInt = #line) {
+    // MARK: - Logging
+    public func info(
+        _ message: String,
+        _ type: OSLog? = nil,
+        filename: String = #file,
+        function: String = #function,
+        line: UInt = #line) {
+        
         log(level: .info,
             message: message,
+            type: type,
             filename: filename,
             function: function,
             line: line)
     }
     
-    public func warning(_ message: String,
-                        filename: String = #file,
-                        function: String = #function,
-                        line: UInt = #line) {
-        log(level: .warning,
+    public func debug(
+        _ message: String,
+        _ type: OSLog? = nil,
+        filename: String = #file,
+        function: String = #function,
+        line: UInt = #line) {
+        
+        log(level: .debug,
             message: message,
+            type: type,
             filename: filename,
             function: function,
             line: line)
     }
     
-    public func error(_ message: String,
-                      filename: String = #file,
-                      function: String = #function,
-                      line: UInt = #line) {
+    public func error(
+        _ message: String,
+        _ type: OSLog? = nil,
+        filename: String = #file,
+        function: String = #function,
+        line: UInt = #line) {
+        
         log(level: .error,
             message: message,
+            type: type,
             filename: filename,
             function: function,
             line: line)
     }
     
-}
-
-// MARK: - Private func
-extension RSLog {
-    
-    private func log(level: LogLevel,
-                     message: String,
-                     filename: String,
-                     function: String,
-                     line: UInt) {
+    // MARK: - Util
+    private func log(
+        level: LogLevel,
+        message: String,
+        type: OSLog?,
+        filename: String,
+        function: String,
+        line: UInt) {
+        
         #if DEBUG
         logQueue.async { [weak self] in
             guard let `self` = self else { return }
-            print("[\(level.symbol) \(level.title)] [\(self.format(filename)):\(line)] \(function) - \(message)")
+            
+            let logString = [
+                self.formattedLogLevelString(from: level),
+                self.formattedFilespecsStringFrom(
+                    filename: filename,
+                    function: function,
+                    line: line),
+                self.formattedMessageString(from: message)
+                ]
+                .compactMap { $0 }
+                .joined(separator: " ")
+            
+            if self.isOSLogEnabled, #available(iOS 10.0, *) {
+                if let logType = type {
+                    os_log(
+                        "%@",
+                        log: logType,
+                        type: self.getOSLogLevel(from: level),
+                        logString)
+                } else {
+                    os_log(
+                        "%@",
+                        type: self.getOSLogLevel(from: level),
+                        logString)
+                }
+            } else {
+                print(logString)
+            }
         }
         #endif
     }
     
-    private func format(_ filename: String) -> String {
+    private func formattedLogLevelString(from logLevel: LogLevel) -> String? {
+        
+        guard isLogLevelTitleDisplayed || isLogLevelSymbolDisplayed else {
+            return nil
+        }
+        let result = [
+            isLogLevelSymbolDisplayed
+                ? logLevelSymbolProvider(logLevel)
+                : nil,
+            isLogLevelTitleDisplayed
+                ? logLevelTitleProvider(logLevel)
+                : nil]
+            .compactMap { $0 }
+            .joined(separator: " ")
+        return "[\(result)]"
+    }
+    
+    private func formattedFilespecsStringFrom(
+        filename: String,
+        function: String,
+        line: UInt) -> String? {
+        
+        guard isFilenameDisplayed || isFunctionNameDisplayed else {
+            return nil
+        }
+        let result = [
+            isFilenameDisplayed
+                ? "\(formattedFilenameString(from: filename)): \(line)"
+                : nil,
+            isFunctionNameDisplayed
+                ? function
+                : nil]
+            .compactMap { $0 }
+            .joined(separator: " ")
+        return "[\(result)]"
+    }
+    
+    private func formattedMessageString(from logMessage: String) -> String {
+
+        let startHint = "\u{2b91}"
+        return "\n    \(startHint) \(logMessage)"
+    }
+    
+    private func formattedFilenameString(from filename: String) -> String {
+        
         return filename.components(separatedBy: "/").last?
             .components(separatedBy: ".").first ?? "???"
     }
     
+    @available(iOS 10.0, *)
+    private func getOSLogLevel(from logLevel: LogLevel) -> OSLogType {
+        
+        switch logLevel {
+        case .info:
+            return .default
+        case .debug:
+            return .debug
+        case .error:
+            return .error
+        }
+    }
 }
+
+// MARK: - OSLog Usage Tips
+//extension OSLog {
+//    private static var subsystem = Bundle.main.bundleIdentifier!
+//
+//    static let ui = OSLog(subsystem: subsystem, category: "UI")
+//    static let network = OSLog(subsystem: subsystem, category: "Network")
+//}
+//RSLog.shared.info("test", .network)
+

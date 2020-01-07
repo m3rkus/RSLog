@@ -15,6 +15,7 @@ DerivedData/
 xcuserdata/
 
 ## Other
+.DS_Store
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8B036E9420BA057500985462 /* RSLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B036E9220BA057500985462 /* RSLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B036E9B20BA05BA00985462 /* RSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B036E9A20BA05BA00985462 /* RSLog.swift */; };
-		8B036E9D20BA05D100985462 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B036E9C20BA05D100985462 /* Logger.swift */; };
 		8B2A070D20E04A3600BE1F61 /* RSLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A070C20E04A3600BE1F61 /* RSLogTests.swift */; };
 		8B2A070F20E04A3600BE1F61 /* RSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B036E8F20BA057500985462 /* RSLog.framework */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		8B036E9220BA057500985462 /* RSLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSLog.h; sourceTree = "<group>"; };
 		8B036E9320BA057500985462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B036E9A20BA05BA00985462 /* RSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSLog.swift; sourceTree = "<group>"; };
-		8B036E9C20BA05D100985462 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8B2A070A20E04A3600BE1F61 /* RSLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2A070C20E04A3600BE1F61 /* RSLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSLogTests.swift; sourceTree = "<group>"; };
 		8B2A070E20E04A3600BE1F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				8B036E9220BA057500985462 /* RSLog.h */,
 				8B036E9320BA057500985462 /* Info.plist */,
 				8B036E9A20BA05BA00985462 /* RSLog.swift */,
-				8B036E9C20BA05D100985462 /* Logger.swift */,
 			);
 			path = RSLog;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B036E9B20BA05BA00985462 /* RSLog.swift in Sources */,
-				8B036E9D20BA05D100985462 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +348,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AW8VXETGH8;
+				DEVELOPMENT_TEAM = 6DLQ3N49V9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -380,7 +376,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AW8VXETGH8;
+				DEVELOPMENT_TEAM = 6DLQ3N49V9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
