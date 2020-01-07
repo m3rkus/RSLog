@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3075588B23C544CB0018B3DC /* RSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3075588A23C544CB0018B3DC /* RSLog.framework */; };
+		3075588C23C544CB0018B3DC /* RSLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3075588A23C544CB0018B3DC /* RSLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8BF8EFB120E41AAA0051815E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB020E41AAA0051815E /* AppDelegate.swift */; };
 		8BF8EFB320E41AAA0051815E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB220E41AAA0051815E /* ViewController.swift */; };
 		8BF8EFB620E41AAA0051815E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB420E41AAA0051815E /* Main.storyboard */; };
@@ -21,6 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3075588C23C544CB0018B3DC /* RSLog.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3075588A23C544CB0018B3DC /* RSLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF8EFAD20E41AAA0051815E /* RSLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF8EFB020E41AAA0051815E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF8EFB220E41AAA0051815E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,17 +46,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3075588B23C544CB0018B3DC /* RSLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3075588923C544CB0018B3DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3075588A23C544CB0018B3DC /* RSLog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8BF8EFA420E41AA90051815E = {
 			isa = PBXGroup;
 			children = (
 				8BF8EFAF20E41AAA0051815E /* RSLogExample */,
 				8BF8EFAE20E41AAA0051815E /* Products */,
+				3075588923C544CB0018B3DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

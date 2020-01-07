@@ -75,7 +75,7 @@ final public class RSLog: RSLogProtocol {
         case .info:
             return "INFO"
         case .debug:
-            return "WARNING"
+            return "DEBUG"
         case .error:
             return "ERROR"
         }
