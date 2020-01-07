@@ -10,10 +10,7 @@
 		3075588B23C544CB0018B3DC /* RSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3075588A23C544CB0018B3DC /* RSLog.framework */; };
 		3075588C23C544CB0018B3DC /* RSLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3075588A23C544CB0018B3DC /* RSLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8BF8EFB120E41AAA0051815E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB020E41AAA0051815E /* AppDelegate.swift */; };
-		8BF8EFB320E41AAA0051815E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB220E41AAA0051815E /* ViewController.swift */; };
-		8BF8EFB620E41AAA0051815E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB420E41AAA0051815E /* Main.storyboard */; };
 		8BF8EFB820E41AAD0051815E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB720E41AAD0051815E /* Assets.xcassets */; };
-		8BF8EFBB20E41AAD0051815E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,10 +31,7 @@
 		3075588A23C544CB0018B3DC /* RSLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RSLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF8EFAD20E41AAA0051815E /* RSLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF8EFB020E41AAA0051815E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BF8EFB220E41AAA0051815E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8BF8EFB520E41AAA0051815E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BF8EFB720E41AAD0051815E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8BF8EFBA20E41AAD0051815E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BF8EFBC20E41AAD0051815E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,10 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF8EFB020E41AAA0051815E /* AppDelegate.swift */,
-				8BF8EFB220E41AAA0051815E /* ViewController.swift */,
-				8BF8EFB420E41AAA0051815E /* Main.storyboard */,
 				8BF8EFB720E41AAD0051815E /* Assets.xcassets */,
-				8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */,
 				8BF8EFBC20E41AAD0051815E /* Info.plist */,
 			);
 			path = RSLogExample;
@@ -150,9 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BF8EFBB20E41AAD0051815E /* LaunchScreen.storyboard in Resources */,
 				8BF8EFB820E41AAD0051815E /* Assets.xcassets in Resources */,
-				8BF8EFB620E41AAA0051815E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,31 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BF8EFB320E41AAA0051815E /* ViewController.swift in Sources */,
 				8BF8EFB120E41AAA0051815E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8BF8EFB420E41AAA0051815E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BF8EFB520E41AAA0051815E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8BF8EFB920E41AAD0051815E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BF8EFBA20E41AAD0051815E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8BF8EFBD20E41AAD0051815E /* Debug */ = {
@@ -241,7 +210,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -295,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
